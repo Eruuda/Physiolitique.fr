@@ -1,0 +1,100 @@
+body {
+    background-image: url(background.webp);
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    font-family: 'Lucida Sans';
+}
+
+.lilita-one-regular {
+    font-family: "Lilita One", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+#logoPics {
+    height: 25%;
+    width: 25%;
+}
+
+#politiPics {
+    width: 20%;
+    height: 20%;
+    border: solid rgb(255, 255, 255) 3px;
+    border-radius: 10px;
+}
+
+#scoreName {
+    font-family: 'Lilita One';
+    font-weight: bold;
+    font-size: 20px;
+    color: rgb(49, 49, 49);
+    padding: 5px 5px 5px 5px;
+    background-color: white;
+    border-radius: 1px;
+    text-align: center;
+    border: solid white 1px;    
+}
+
+#scorePoint {
+    font-family: 'Lilita One';
+    font-size: 20px;
+    color: white;
+    padding: 5px 10px 5px 10px;
+    background-color: rgb(49, 49, 49);
+    border-radius: 1px;
+    text-align: center;
+    border: solid white 1px;
+}
+
+.score-container {
+    display: flex;
+    justify-content: center; 
+    gap: 0px; 
+}
+
+button {
+    margin: 50px;
+}
+
+.leftB {
+    height: 100px;
+    width: 400px;
+    border: solid red 3px;
+    border-radius: 5px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(49, 49, 49);
+    padding: 10px 10px 10px 10px;
+    margin-top: 50px;
+    font-family: 'Lilita One';
+    font-size: 35px;
+}
+
+.rightB {
+    height: 100px;
+    width: 400px;
+    border: solid rgb(47, 0, 255); 3px;
+    border-radius: 5px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(49, 49, 49);
+    padding: 10px 10px 10px 10px;
+    margin-top: 50px;
+    font-family: 'Lilita One';
+    font-size: 35px;
+}
+
+
+.leftB:hover {
+    background-color: red;
+    font-weight: bold;
+    color: white;
+    border: solid white 3px;
+}
+
+.rightB:hover {
+    background-color: rgb(47, 0, 255);
+    font-weight: bold;
+    color: white;
+    border: solid white 3px;
+}
