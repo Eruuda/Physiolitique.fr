@@ -113,7 +113,7 @@ function loadNewImage() {
       score = 0;
       document.getElementById('inccorrectSound').play();
     }
-    document.getElementById('scorePoint').innerText = `Score: ${score}`;
+    document.getElementById('scorePoint').innerText = `${score}`;
     currentIndex = (currentIndex + 1) % politicians.length;
     loadNewImage();
   }
