@@ -1,5 +1,9 @@
-// Liste des députés avec leur orientation (g ou d) :
-const deputes = [
+let currentIndex = 0;
+let score = 0;
+let highScore = localStorage.getItem("highScore") || 0;
+
+// Liste des députés avec les réponses associées, soit G ou D.
+  const deputes = [
   { name: "député1", orientation: "d", image: "imgQ/266793d.jpg" },
   { name: "député2", orientation: "d", image: "imgQ/267561d.jpg" },
   { name: "député3", orientation: "d", image: "imgQ/267763d.jpg" },
@@ -82,111 +86,70 @@ const deputes = [
   { name: "député80", orientation: "d", image: "imgQ/842279d.jpg" },
 ];
 
-let currentIndex = 0;
-let score = 0;
-let highScore = localStorage.getItem('highScore') || 0;
+// Afficher le meilleur score :
+  document.getElementById("highScore").innerText = `${highScore}`;
 
-// Afficher le high score
-document.getElementById('highScore').innerText = `${highScore}`;
-
-// Fonction pour mélanger la liste
-function shuffleArray(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
+// Mélanger la liste des députés après une réponse :
+  function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
   }
 }
 
-// Mélanger la liste au chargement de la page
-shuffleArray(deputes);
+// Mélanger la liste des députés au chargement de la page :
+  shuffleArray(deputes);
 
-// Fonction pour charger une nouvelle image
+// Charger une image dans la liste des députés :
 function loadNewImage() {
   const politician = deputes[currentIndex];
   document.getElementById("politiPics").src = politician.image;
 }
 
-// Fonction pour vérifier la réponse
-function checkAnswer(orientation) {
-  const politician = deputes[currentIndex];
-  if (politician.orientation === orientation) {
-    score++;
-    document.getElementById("correctSound").play();
-  } else {
-    score = 0;
-    document.getElementById("inccorrectSound").play();
-  }
-  document.getElementById("scorePoint").innerText = `${score}`;
+// Vérifier si la réponse donnée est correcte :
+  function checkAnswer(orientation) {
+    const politician = deputes[currentIndex];
+    if (politician.orientation === orientation) {
+      score++;
+      document.getElementById("correctSound").play();
+ } 
+    else {
+      score = 0;
+      document.getElementById("inccorrectSound").play();
+ }
+      document.getElementById("scorePoint").innerText = `${score}`;
 
-
-    // Mettre à jour le high score si nécessaire
+  // Mettre à jour le meilleur score :
     if (score > highScore) {
-        highScore = score;
-        localStorage.setItem('highScore', highScore);
-        document.getElementById('highScore').innerText = `${highScore}`;
-    }
+      highScore = score;
+      localStorage.setItem("highScore", highScore);
+      document.getElementById("highScore").innerText = `${highScore}`;
+ }
 
-    currentIndex = (currentIndex + 1) % deputes.length;
+  currentIndex = (currentIndex + 1) % deputes.length;
     loadNewImage();
-}
+ }
 
-// Écouteurs d'événements pour les boutons
-document
-  .querySelector(".leftB")
-  .addEventListener("click", () => checkAnswer("g"));
-document
-  .querySelector(".rightB")
-  .addEventListener("click", () => checkAnswer("d"));
+// Boutons
+  document
+    .querySelector(".leftB")
+    .addEventListener("click", () => checkAnswer("g"));
+  document
+    .querySelector(".rightB")
+    .addEventListener("click", () => checkAnswer("d"));
+
 
 // Charger la première image au démarrage
-loadNewImage();
+  loadNewImage();
 
 // Sélectionner les boutons
-const leftButton = document.querySelector(".leftB");
-const rightButton = document.querySelector(".rightB");
+  const leftButton = document.querySelector(".leftB");
+  const rightButton = document.querySelector(".rightB");
 
-// Variable pour stocker le timeout
-let hoverTimeoutL;
-let hoverTimeoutR;
+// Sons :
+  const correctSound = document.getElementById('correctSound');
+  const inccorrectSound = document.getElementById('inccorrectSound');
 
-// Fonction pour jouer le son au survol
-function playHoverSoundL() {
-  const hoverSound = document.getElementById("hoverSoundL");
-  hoverSound.currentTime = 1; // Réinitialiser le son pour qu'il rejoue à chaque survol
-  hoverSound.play();
-}
-
-function stopHoverSoundL() {
-  const hoverSound = document.getElementById("hoverSoundL");
-  hoverSound.pause(); // Arrêter le son
-  hoverSound.currentTime = 0; // Réinitialiser le son
-  clearTimeout(hoverTimeoutL); // Annuler le timeout si la souris quitte le bouton
-}
-
-function playHoverSoundR() {
-  const hoverSound = document.getElementById("hoverSoundR");
-  hoverSound.currentTime = 1; // Réinitialiser le son pour qu'il rejoue à chaque survol
-  hoverSound.play();
-}
-
-function stopHoverSoundR() {
-  const hoverSound = document.getElementById("hoverSoundR");
-  hoverSound.pause(); // Arrêter le son
-  hoverSound.currentTime = 0; // Réinitialiser le son
-  clearTimeout(hoverTimeoutR); // Annuler le timeout si la souris quitte le bouton
-}
-
-// Fonction pour démarrer le délai avant de jouer le son
-function startHoverSoundDelayL() {
-  hoverTimeoutL = setTimeout(playHoverSoundL, 3000); // Délai de 5000 ms
-}
-
-function startHoverSoundDelayR() {
-  hoverTimeoutR = setTimeout(playHoverSoundR, 3000); // Délai de 5000 ms
-}
-
-// Ajouter des écouteurs d'événements pour le survol
-leftButton.addEventListener("mouseover", startHoverSoundDelayL);
-leftButton.addEventListener("mouseout", stopHoverSoundL);
-rightButton.addEventListener("mouseover", startHoverSoundDelayR);
-rightButton.addEventListener("mouseout", stopHoverSoundR);
+// Définir le volume des sons :
+  correctSound.volume = 0.1;
+  inccorrectSound.volume = 0.1;

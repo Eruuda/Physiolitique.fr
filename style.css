@@ -1,151 +1,148 @@
 body {
-    background-image: url(background.webp);
-    background-attachment: fixed;
-    background-size: cover;
-    background-repeat: no-repeat;
-    text-align: center;
-    font-family: 'Lucida Sans';
+  background-image: url(background.webp);
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+  font-family: "Lucida Sans";
 }
 
 .lilita-one-regular {
-    font-family: "Lilita One", serif;
-    font-weight: 400;
-    font-style: normal;
+  font-family: "Lilita One", serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 #logoPics {
-    height: 35%;
-    width: 35%;
+  height: 35%;
+  width: 35%;
 }
 
 #politiPics {
-    width: 20%;
-    height: 20%;
-    border: solid rgb(255, 255, 255) 3px;
-    border-radius: 10px;
+  width: 20%;
+  height: 20%;
+  border: solid rgb(255, 255, 255) 3px;
+  border-radius: 10px;
 }
 
 #scoreName {
-    font-family: 'Lilita One';
-    font-weight: bold;
-    font-size: 30px;
-    color: rgb(49, 49, 49);
-    padding: 5px 5px 5px 5px;
-    background-color: white;
-    border-radius: 1px;
-    text-align: center;
-    border: solid white 1px;    
+  font-family: "Lilita One";
+  font-weight: bold;
+  font-size: 30px;
+  color: rgb(49, 49, 49);
+  padding: 5px 5px 5px 5px;
+  background-color: white;
+  border-radius: 1px;
+  text-align: center;
+  border: solid white 1px;
 }
 
 #scorePoint {
-    font-family: 'Lilita One';
-    font-size: 30px;
-    color: white;
-    padding: 5px 10px 5px 10px;
-    background-color: rgb(49, 49, 49);
-    border-radius: 1px;
-    text-align: center;
-    border: solid white 1px;
+  font-family: "Lilita One";
+  font-size: 30px;
+  color: white;
+  padding: 5px 10px 5px 10px;
+  background-color: rgb(49, 49, 49);
+  border-radius: 1px;
+  text-align: center;
+  border: solid white 1px;
 }
 
 .score-container {
-    margin-top: 50px;
-    position: absolute;
-    display: flex;
-    justify-content: left; 
-    gap: 0px; 
-
+  margin-top: 50px;
+  position: absolute;
+  display: flex;
+  justify-content: left;
+  gap: 0px;
 }
 
 #highscoreName {
-    font-family: 'Lilita One';
-    font-weight: bold;
-    font-size: 30px;
-    color: rgb(49, 49, 49);
-    padding: 5px 5px 5px 5px;
-    background-color: white;
-    border-radius: 1px;
-    text-align: center;
-    border: solid white 1px;    
+  font-family: "Lilita One";
+  font-weight: bold;
+  font-size: 30px;
+  color: rgb(49, 49, 49);
+  padding: 5px 5px 5px 5px;
+  background-color: white;
+  border-radius: 1px;
+  text-align: center;
+  border: solid white 1px;
 }
 
 #highScore {
-    font-family: 'Lilita One';
-    font-size: 30px;
-    color: white;
-    padding: 5px 10px 5px 10px;
-    background-color: rgb(49, 49, 49);
-    border-radius: 1px;
-    text-align: center;
-    border: solid white 1px;
+  font-family: "Lilita One";
+  font-size: 30px;
+  color: white;
+  padding: 5px 10px 5px 10px;
+  background-color: rgb(49, 49, 49);
+  border-radius: 1px;
+  text-align: center;
+  border: solid white 1px;
 }
 
 .highscore-container {
-    position: absolute;
-    display: flex;
-    justify-content: left; 
-    gap: 0px; 
+  position: absolute;
+  display: flex;
+  justify-content: left;
+  gap: 0px;
 }
 
 button {
-    margin: 50px;
+  margin: 50px;
 }
 
 .leftB {
-    background: #fb1f2a;
-    font-family: 'Lilita One';
-    padding: 0.6em 1.3em;
-    font-size: 50px;
-    border: 3px solid rgb(255, 255, 255);
-    border-radius: 0.4em;
-    box-shadow: 0.1em 0.1em white;
-    cursor: pointer;
-    color: white;
-  }
-  
+  background: #fb1f2a;
+  font-family: "Lilita One";
+  padding: 0.6em 1.3em;
+  font-size: 50px;
+  border: 3px solid rgb(255, 255, 255);
+  border-radius: 0.4em;
+  box-shadow: 0.1em 0.1em white;
+  cursor: pointer;
+  color: white;
+}
+
 .leftB:hover {
-    transform: translate(-0.05em, -0.05em);
-    box-shadow: 0.15em 0.15em;
-  }
-  
+  transform: translate(-0.05em, -0.05em);
+  box-shadow: 0.15em 0.15em;
+}
+
 .leftB:active {
-    transform: translate(0.05em, 0.05em);
-    box-shadow: 0.05em 0.05em;
-  }
+  transform: translate(0.05em, 0.05em);
+  box-shadow: 0.05em 0.05em;
+}
 
 .rightB {
-    background: #1f5afb;
-    font-family: 'Lilita One';
-    padding: 0.6em 1.3em;
-    font-size: 50px;
-    border: 3px solid rgb(255, 255, 255);
-    border-radius: 0.4em;
-    box-shadow: 0.1em 0.1em white;
-    cursor: pointer;
-    color: white;
-  }
-  
-.rightB:hover {
-    transform: translate(-0.05em, -0.05em);
-    box-shadow: 0.15em 0.15em;
-  }
-  
-.rightB:active {
-    transform: translate(0.05em, 0.05em);
-    box-shadow: 0.05em 0.05em;
-  }
-  
+  background: #1f5afb;
+  font-family: "Lilita One";
+  padding: 0.6em 1.3em;
+  font-size: 50px;
+  border: 3px solid rgb(255, 255, 255);
+  border-radius: 0.4em;
+  box-shadow: 0.1em 0.1em white;
+  cursor: pointer;
+  color: white;
+}
 
+.rightB:hover {
+  transform: translate(-0.05em, -0.05em);
+  box-shadow: 0.15em 0.15em;
+}
+
+.rightB:active {
+  transform: translate(0.05em, 0.05em);
+  box-shadow: 0.05em 0.05em;
+}
 
 #FooterF {
-    font-family: 'Lilita One';
-    font-style: italic;
-    color: white;
-    font-size: 25px;
-    text-decoration: none;
-    text-shadow: black 3px;
+  font-family: "Lilita One";
+  font-style: italic;
+  color: white;
+  font-size: 25px;
+  text-decoration: none;
+  text-shadow: black 3px;
 }
 
 a {
-    color: white;
+  color: white;
 }
