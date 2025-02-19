@@ -14,8 +14,8 @@ body {
 }
 
 #logoPics {
-    height: 25%;
-    width: 25%;
+    height: 35%;
+    width: 35%;
 }
 
 #politiPics {
@@ -28,7 +28,7 @@ body {
 #scoreName {
     font-family: 'Lilita One';
     font-weight: bold;
-    font-size: 20px;
+    font-size: 30px;
     color: rgb(49, 49, 49);
     padding: 5px 5px 5px 5px;
     background-color: white;
@@ -39,7 +39,7 @@ body {
 
 #scorePoint {
     font-family: 'Lilita One';
-    font-size: 20px;
+    font-size: 30px;
     color: white;
     padding: 5px 10px 5px 10px;
     background-color: rgb(49, 49, 49);
@@ -49,8 +49,10 @@ body {
 }
 
 .score-container {
+    margin-top: 50px;
+    position: absolute;
     display: flex;
-    justify-content: center; 
+    justify-content: left; 
     gap: 0px; 
 
 }
@@ -58,7 +60,7 @@ body {
 #highscoreName {
     font-family: 'Lilita One';
     font-weight: bold;
-    font-size: 20px;
+    font-size: 30px;
     color: rgb(49, 49, 49);
     padding: 5px 5px 5px 5px;
     background-color: white;
@@ -69,7 +71,7 @@ body {
 
 #highScore {
     font-family: 'Lilita One';
-    font-size: 20px;
+    font-size: 30px;
     color: white;
     padding: 5px 10px 5px 10px;
     background-color: rgb(49, 49, 49);
@@ -79,8 +81,9 @@ body {
 }
 
 .highscore-container {
+    position: absolute;
     display: flex;
-    justify-content: center; 
+    justify-content: left; 
     gap: 0px; 
 }
 
