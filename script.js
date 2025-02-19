@@ -84,6 +84,10 @@ const deputes = [
 
 let currentIndex = 0;
 let score = 0;
+let highScore = localStorage.getItem('highScore') || 0;
+
+// Afficher le high score
+document.getElementById('highScore').innerText = `${highScore}`;
 
 // Fonction pour mélanger la liste
 function shuffleArray(array) {
@@ -113,8 +117,17 @@ function checkAnswer(orientation) {
     document.getElementById("inccorrectSound").play();
   }
   document.getElementById("scorePoint").innerText = `${score}`;
-  currentIndex = (currentIndex + 1) % deputes.length;
-  loadNewImage();
+
+
+    // Mettre à jour le high score si nécessaire
+    if (score > highScore) {
+        highScore = score;
+        localStorage.setItem('highScore', highScore);
+        document.getElementById('highScore').innerText = `High Score: ${highScore}`;
+    }
+
+    currentIndex = (currentIndex + 1) % deputes.length;
+    loadNewImage();
 }
 
 // Écouteurs d'événements pour les boutons
