@@ -123,7 +123,7 @@ function checkAnswer(orientation) {
     if (score > highScore) {
         highScore = score;
         localStorage.setItem('highScore', highScore);
-        document.getElementById('highScore').innerText = `High Score: ${highScore}`;
+        document.getElementById('highScore').innerText = `${highScore}`;
     }
 
     currentIndex = (currentIndex + 1) % deputes.length;
